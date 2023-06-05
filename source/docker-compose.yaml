@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+
+  rabbitmq:
+      build:
+        context: ./rabbitMQ
+        dockerfile: Dockerfile
+      ports:
+        - "5672:5672"
+        - "15672:15672"
+      environment:
+        - RABBITMQ_DEFAULT_USER=username
+        - RABBITMQ_DEFAULT_PASS=password
+      networks:
+        - dev-net
+
+  sender:
+    build:
+      context: ./sender
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rabbitmq
+    networks:
+      - dev-net
+  
+  processor:
+    build:
+      context: ./processor
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    depends_on:
+      - rabbitmq
+    networks:
+      - dev-net
+networks:
+  dev-net:
+    driver: bridge
