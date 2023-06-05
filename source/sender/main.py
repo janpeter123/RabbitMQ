@@ -50,8 +50,7 @@ async def upload_file(file: UploadFile = File(...)):
         #Definindo credenciais com o RabbitMQ
         credentials = pika.PlainCredentials(RABBITMQ_USER, RABBITMQ_PASS)
 
-        #Definindo conexao com o RabbitMQ
-        parameters = pika.ConnectionParameters('127.0.0.1',5672,'/',credentials)
+        parameters = pika.ConnectionParameters('rabbitmq', 5672, '/', credentials)
         connection = pika.BlockingConnection(parameters)
 
         #Conectando ao RabbitMQ

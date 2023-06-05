@@ -4,14 +4,10 @@ FROM python:3.9-slim
 # Set working directory
 WORKDIR /app
 
-# Copy requirements file
-COPY requirements.txt .
-
+# Copy the FastAPI application file
+COPY . .
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the FastAPI application file
-COPY main.py .
 
 # Set environment variables for RabbitMQ
 ENV RABBITMQ_HOST=localhost

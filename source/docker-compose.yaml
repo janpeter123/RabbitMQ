@@ -32,9 +32,10 @@ services:
     ports:
       - "8001:8001"
     depends_on:
-      - rabbitmq
+      - sender
     networks:
       - dev-net
+      
 networks:
   dev-net:
     driver: bridge

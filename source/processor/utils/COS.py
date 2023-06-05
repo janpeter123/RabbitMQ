@@ -1,4 +1,3 @@
-from fastapi import FastAPI
 from dotenv import load_dotenv
 from ibm_botocore.client import Config, ClientError
 import ibm_boto3
