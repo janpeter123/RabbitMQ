@@ -9,4 +9,7 @@ The Processor application is responsible for retrieving the file names from the 
 
 By implementing this queue-based system, I seeked to can gain valuable skills and insights into using message queues for handling asynchronous communication and decoupling different components of an application. The project provides me a foundation for understanding how to leverage RabbitMQ and IBM COS to build robust and scalable systems that can efficiently handle file processing tasks.
 
+## Application Architecture
+
+![sample architecture](documents/images/sample_architecture.png)
 
