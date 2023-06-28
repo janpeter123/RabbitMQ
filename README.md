@@ -13,3 +13,12 @@ By implementing this queue-based system, I seeked to can gain valuable skills an
 
 ![sample architecture](documents/images/sample_architecture.png)
 
+
+## How to run the applcation
+This application was created to be easy to change and very easy to run, it was meant to be a microservice.
+
+If you just want RabitMQ, delete all the things that are related to IBM Cloud Oject Storage. Go to `./source/sender` and create a new `.env` file based on the examples provided called `.env.example` and fill the required credentials. Replicate the same process on `./source/processor`, after that you are ready to start the application.
+To start this application go to `./source` and run `Docker compose up -d` on your terminal.
+
+
+
